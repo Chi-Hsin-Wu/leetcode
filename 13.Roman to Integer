@@ -1,0 +1,19 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        #use dictionary
+        #build dictionary
+        #按數字大小製作字典，問題是將羅馬數字轉成阿拉伯數字，而羅馬數字的排列順序是由大到小
+        #dictionary{key:value}
+        roman_dict={"M":1000,"D":500,"C":100,"L":50,"X":10,"V":5,"I":1}
+        number=0
+        #search input string
+        for i in range(len(s)):
+            #若較小的數字先出現，則用後面的數字減去前面的數字
+            if i<len(s)-1 and roman_dict[s[i]]<roman_dict[s[i+1]]:
+                number=number-roman_dict[s[i]]
+            else:
+                number=number+roman_dict[s[i]]
+        
+        return number
+
+        
