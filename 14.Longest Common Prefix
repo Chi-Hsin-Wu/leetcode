@@ -1,0 +1,22 @@
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+        string output="";
+        if (strs.size()<=0) return "";
+        //先將字串按順序排好
+        sort(strs.begin(),strs.end());
+        //用第一個字串做為比較基準點，逐一和後面的字串做比較
+    int n=strs.size();
+    string first=strs[0];
+    string last=strs[n-1];
+    //從頭開始掃，遇到一樣的字元則將它和空白的output組合，直到遇到不一樣的部分
+    for(int i=0;i<min(first.size(),last.size());i++){
+        if(first[i]!=last[i]){
+            return output;
+        }
+       output=output+first[i];
+    }
+        return output;
+    }
+    
+};
