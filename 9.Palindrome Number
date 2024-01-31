@@ -5,7 +5,7 @@ public:
         int y=x;
         int reversol=0;
         //把數字反轉過來再做比較
-        //原始数字取餘數再除以10，res乘10加余数
+        //原始数字取餘數再除以10，reverse乘10加余数
         while(x!=0){
                 int tmp=x%10;
                 reversol=reversol*10+tmp;
